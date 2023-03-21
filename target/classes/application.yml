@@ -1,0 +1,35 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: 12345678
+  redis:
+    port: 6379
+    host: localhost
+    database: 0
+  cache:
+    redis:
+      time-to-live: 1800000 #设置缓存过期时间
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 30MB
+
+mybatis-plus:
+  configuration:
+    # 在映射实体或属性时，将数据库中表名和字段名中的下划线去掉
+    map-underscore-to-camel-case: true #开启驼峰命名
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #开启mybatis日志
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID #id生成策略
+reggie:
+  path: /Users/lww/software/Intelli IDEA/reggie/src/main/resources/photo/
+
+
+
